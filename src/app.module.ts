@@ -19,6 +19,7 @@ import { UserModule } from './modules/user/user.module';
         await createDataSourceOptions(configService),
       inject: [ConfigService],
     }),
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
