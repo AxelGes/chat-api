@@ -8,6 +8,7 @@ export enum AppEnvironment {
 export interface AppConfiguration {
   env: AppEnvironment;
   port: number;
+  secret: string;
 }
 
 export interface PostgresConfiguration {

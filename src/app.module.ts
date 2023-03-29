@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import configuration from './config/configuration';
 import { createDataSourceOptions } from './config/database/data-source';
 import { UserModule } from './modules/user/user.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { UserModule } from './modules/user/user.module';
       inject: [ConfigService],
     }),
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

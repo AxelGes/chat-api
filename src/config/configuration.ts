@@ -8,6 +8,7 @@ export default () => {
   const app: AppConfiguration = {
     env: process.env.NODE_ENV as AppEnvironment,
     port: parseInt(process.env.APP_PORT || '3000'),
+    secret: process.env.JWT_SECRET,
   };
 
   const postgres: PostgresConfiguration = {
