@@ -8,6 +8,7 @@ import { createDataSourceOptions } from './config/database/data-source';
 import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { MessageModule } from './modules/message/message.module';
+import { ConversationModule } from './modules/conversation/conversation.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { MessageModule } from './modules/message/message.module';
     AuthModule,
     UserModule,
     MessageModule,
+    ConversationModule,
   ],
   controllers: [AppController],
   providers: [AppService],

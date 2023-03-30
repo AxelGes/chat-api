@@ -1,5 +1,6 @@
 import { Column, Entity, OneToMany } from 'typeorm';
 import { EntityBase } from '../../../common/models/entity.model';
+import { Conversation } from '../../conversation/entities/conversation.entity';
 import { Message } from '../../message/entities/message.entity';
 
 @Entity()
@@ -13,13 +14,13 @@ export class User extends EntityBase {
   @OneToMany(() => Message, (message) => message.sender)
   messages: Message[];
 
-  // @OneToMany(() => Conversation, (conversation) => conversation.creator)
-  // createdConversations: Conversation[];
+  @OneToMany(() => Conversation, (conversation) => conversation.creator)
+  createdConversations: Conversation[];
 
-  // @OneToMany(() => Conversation, (conversation) => conversation.recipient)
-  // receivedConversations: Conversation[];
+  @OneToMany(() => Conversation, (conversation) => conversation.recipient)
+  receivedConversations: Conversation[];
 
-  // get conversations(): Conversation[] {
-  //   return [...this.createdConversations, ...this.receivedConversations];
-  // }
+  get conversations(): Conversation[] {
+    return [...this.createdConversations, ...this.receivedConversations];
+  }
 }

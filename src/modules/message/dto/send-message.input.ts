@@ -1,8 +1,7 @@
 import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
-import { Conversation } from '../../conversation/entities/conversation.entity';
 import { User } from '../../user/entities/user.entity';
 
-export class CreateMessageInput {
+export class SendMessageInput {
   @IsNotEmpty()
   @IsString()
   content: string;
@@ -11,5 +10,9 @@ export class CreateMessageInput {
   sender: User;
 
   @IsOptional()
-  conversation: Conversation;
+  recipient: User;
+
+  @IsNotEmpty()
+  @IsNumber()
+  recipientId: number;
 }
