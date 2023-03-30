@@ -7,6 +7,7 @@ import configuration from './config/configuration';
 import { createDataSourceOptions } from './config/database/data-source';
 import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { MessageModule } from './modules/message/message.module';
 
 @Module({
   imports: [
@@ -20,8 +21,9 @@ import { AuthModule } from './modules/auth/auth.module';
         await createDataSourceOptions(configService),
       inject: [ConfigService],
     }),
-    UserModule,
     AuthModule,
+    UserModule,
+    MessageModule,
   ],
   controllers: [AppController],
   providers: [AppService],

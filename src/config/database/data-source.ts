@@ -1,6 +1,7 @@
 import { ConfigService } from '@nestjs/config';
 import { join } from 'path';
 import { DataSource, DataSourceOptions } from 'typeorm';
+import { Message } from '../../modules/message/entities/message.entity';
 import { User } from '../../modules/user/entities/user.entity';
 import { PostgresConfiguration } from '../configuration.interface';
 
@@ -16,8 +17,8 @@ export const createDataSourceOptions = async (
     username: postgresConfig.user,
     password: postgresConfig.password,
     database: postgresConfig.name,
-    entities: [User],
-    migrations: [join(__dirname, '../../database/migrations/*{.ts,.js}')],
+    entities: [User, Message],
+    migrations: [...join(__dirname, '../../database/migrations/*{.ts,.js}')],
     subscribers: ['src/subscriber/*{.ts,.js}'],
     synchronize: true,
   };
