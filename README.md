@@ -1,6 +1,7 @@
 ## Simple chat api
 
 DB diagram: https://drawsql.app/teams/axels-team-1/diagrams/chat-api
+
 Insomnia file: https://drive.google.com/file/d/1gMQLDjPn-YfjjqVnR3E4hxzc0KRGhL69/
 
 <p align="center">
